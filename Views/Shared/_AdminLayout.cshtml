@@ -20,15 +20,21 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class=" nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="ViewCrashes">View Crash Data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white-50" asp-area="" asp-controller="Admin" asp-action="AdminView">Admin</a>
+                            <a class=" nav-link text-white-50" asp-area="" asp-controller="Admin" asp-action="AdminView">Admin</a>
                         </li>
+                        <li class=" text-right float-right">
+                            <a class="btn btn-success btn-md" asp-controller="Admin" asp-action="CrashForm">Create Record</a>
+                        </li>
+                        <a class="col-lg-8 col-med-10 col-sm-8 btn btn-sm btn-primary float-right" href="/account/logout">Log Out</a>
+
                     </ul>
+
                 </div>
             </div>
         </nav>
@@ -36,7 +42,7 @@
     <div class="row m-1 p-1">
 
         @*pulls in the body from the other views*@
-        <div class="col">
+        <div class="col" >
             <div>
                 @RenderBody()
             </div>

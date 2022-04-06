@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "DriveSafe Data";
+}
+
+@model CrashesViewModel
+
+<div class="container">
+
+    @*row 1 - Title of Site *@
+    <div class=row>
+
+        <div class="col-lg-12 col-xs-6 border border-width:8px border-dark">
+            <h1 style="text-align:center">DriveSafe Data</h1>
+        </div>
+
+    </div>
+
+    @*row 2 - DateTime / Road / City / Severity *@
+
+    <table class="table table-sm table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    <div class="col-3">
+                        <h3 style="text-align:center">Date and Time</h3>
+
+                    </div>
+                </th>
+                <th>
+                    <div class="col-3">
+                        <h3 style="text-align:center">Road Name</h3>
+                    </div>
+                </th>
+                <th>
+                    <div class="col-3">
+                        <h3 style="text-align:center">City Name</h3>
+                    </div>
+                </th>
+                <th>
+                    <div class="col-3">
+                        <h3 style="text-align:center">Severity</h3>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+
+        @*row 3 - Date Info / Location Info / Time Info *@
+        @*for each*@
+
+        <tbody>
+            @*if statement*@
+
+            @foreach (Crash x in Model.Crashes)
+            {
+                <tr>
+                    <td>
+                        <div class="col">
+                            @x.CRASH_DATETIME
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="col">
+                            @x.MAIN_ROAD_NAME
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col">
+                            @x.CITY
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col">
+                            @x.CRASH_SEVERITY_ID
+                        </div>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+
+<div page-blah="@Model.PageInfo" page-action="ViewCrashes" page-class="btn"
+     page-class-normal="btn-outline-dark" page-class-selected="btn-primary" page-classes-enabled="true"
+     class="btn-group pull-right m-1"></div>
