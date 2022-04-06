@@ -95,4 +95,12 @@
     <None Include="wwwroot\lib\jquery\LICENSE.txt" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Models\" />
+    <None Remove="Models\ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Models\ViewModels\" />
+  </ItemGroup>
 </Project>
