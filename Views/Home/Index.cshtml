@@ -3,17 +3,30 @@
     Layout = "_Layout";
 }
 
+<!-- Header - set the background image for the header in the line below-->
+<div>
+    <div class="text-center my-5">
+        <p class="fs-3 fw-bolder" style="font-size:70px">ProjectDriveSafe</p>
+        <p class="mb-0">Group 3-2</p>
+    </div>
+</div>
 
-<div class="text-center" style="background-image: url('~/lib/img/granite-background.jpg')">
+
+<div class="col-lg-6 text-center">
     <br />
-    <br />
-    <h4>
+    <h5>
         Utah has recently seen a spike in car accidents and car realted deaths.
         We have put together this website to display the data surounding this spike.
         We hope that Utah Lawmakers and Regulators can use this data as a source to
         make informed decisions on improving automotive safety.
-    </h4>
+    </h5>
     <br />
     <br />
-    <a class="btn btn-primary" asp-controller="Home" asp-action="ViewCrashes">View Crash Data</a>
+    <a class="btn btn-warning" asp-controller="Home" asp-action="ViewCrashes">View Crash Data</a>
 </div>
+
+
+<div class="float-right">
+    <img style="width:500px" class="img-fluid" src="~/lib/img/UDOT_Logo_CMYK_orange_sm.png" alt="..." />
+</div>
+<img style="width:1300px" src="~/lib/img/UDOT-TTG-footer-2021.png" />
