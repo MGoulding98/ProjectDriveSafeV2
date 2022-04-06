@@ -1,8 +1,19 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div class="text-center" style="background-image: url('~/lib/img/granite-background.jpg')">
+    <br />
+    <br />
+    <h4>
+        Utah has recently seen a spike in car accidents and car realted deaths.
+        We have put together this website to display the data surounding this spike.
+        We hope that Utah Lawmakers and Regulators can use this data as a source to
+        make informed decisions on improving automotive safety.
+    </h4>
+    <br />
+    <br />
+    <a class="btn btn-primary" asp-controller="Home" asp-action="ViewCrashes">View Crash Data</a>
 </div>
