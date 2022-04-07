@@ -51,11 +51,10 @@ namespace ProjectDriveSafeV2.Controllers
         }
 
         //Get Crash Details
-        [HttpGet]
-        public IActionResult GetDetails(int crashid)
+        public IActionResult CrashDetails(int crashid)
         {
             Crash c = repo.GetCrash(crashid);
-            return View("GetDetails", c);
+            return View(c);
         }
 
     }
