@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "DriveSafe Details";
+    Layout = "_AdminLayout";
+}
+
+@model Crash
+
+<h6>Crash ID:</h6>
+<div>@Model.CRASH_ID</div>
+
+@*<table class="table table-sm table-bordered">
+    <tbody>
+        <tr><th>Crash ID:</th><td>@c.CRASH_ID</td></tr>
+        <tr><th>Time and Date of Crash:</th><td>@c.CRASH_DATETIME</td></tr>
+        <tr><th>Route:</th><td>@c.ROUTE</td></tr>
+        <tr><th>Milepoint:</th><td>@c.MILEPOINT</td></tr>
+        <tr><th>Latitude:</th><td>@c.LAT_UTM_Y</td></tr>
+        <tr><th>Longitude:</th><td>@c.LONG_UTM_X</td></tr>
+        <tr><th>Main Road Name:</th><td>@c.MAIN_ROAD_NAME</td></tr>
+        <tr><th>City:</th><td>@c.CITY</td></tr>
+        <tr><th>County:</th><td>@c.COUNTY_NAME</td></tr>
+        <tr><th>Severity:</th><td>@c.CRASH_SEVERITY_ID</td></tr>
+        <tr><th>Workzone Related:</th><td>@c.WORK_ZONE_RELATED</td></tr>
+        <tr><th>Pedestrian Involved:</th><td>@c.PEDESTRIAN_INVOLVED</td></tr>
+        <tr><th>Bicyclist Involved:</th><td>@c.BICYCLIST_INVOLVED</td></tr>
+        <tr><th>Motorcycle Involved:</th><td>@c.MOTORCYCLE_INVOLVED</td></tr>
+        <tr><th>Improper Restraint:</th><td>@c.IMPROPER_RESTRAINT</td></tr>
+        <tr><th>Unrestrained:</th><td>@c.UNRESTRAINED</td></tr>
+        <tr><th>DUI:</th><td>@c.DUI</td></tr>
+        <tr><th>Intersection Related:</th><td>@c.INTERSECTION_RELATED</td></tr>
+        <tr><th>Wild Animal Related:</th><td>@c.WILD_ANIMAL_RELATED</td></tr>
+        <tr><th>Domestic Animal Related:</th><td>@c.DOMESTIC_ANIMAL_RELATED</td></tr>
+        <tr><th>Overturn Rollover:</th><td>@c.OVERTURN_ROLLOVER</td></tr>
+        <tr><th>Commercial Motor Vehicle Involved:</th><td>@c.COMMERCIAL_MOTOR_VEH_INVOLVED</td></tr>
+        <tr><th>Teenager Driver Involved:</th><td>@c.TEENAGE_DRIVER_INVOLVED</td></tr>
+        <tr><th>Older Driver Involved:</th><td>@c.OLDER_DRIVER_INVOLVED</td></tr>
+        <tr><th>Night Dark Condition:</th><td>@c.NIGHT_DARK_CONDITION</td></tr>
+        <tr><th>Single Vehicle:</th><td>@c.SINGLE_VEHICLE</td></tr>
+        <tr><th>Distracted Driver:</th><td>@c.DISTRACTED_DRIVING</td></tr>
+        <tr><th>Drowsy Driver:</th><td>@c.DROWSY_DRIVING</td></tr>
+        <tr><th>Roadway Departure:</th><td>@c.ROADWAY_DEPARTURE</td></tr>
+    </tbody>
+</table>
+
+<NavLink class="btn btn-warning" href="@EditUrl">Edit</NavLink>
+<NavLink class="btn btn-secondary" href="/admin/collisions">Back</NavLink>*@

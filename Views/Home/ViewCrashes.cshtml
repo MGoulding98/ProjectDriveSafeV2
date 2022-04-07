@@ -43,29 +43,32 @@
 
             @foreach (Crash x in Model.Crashes)
             {
-                <tr>
-                    <td>
-                        <div class="col">
-                            @x.CRASH_DATETIME
-                        </div>
-                    </td>
+            <tr>
+                <td>
+                    <div class="col">
+                        @x.CRASH_DATETIME
+                    </div>
+                </td>
 
-                    <td>
-                        <div class="col">
-                            @x.MAIN_ROAD_NAME
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col">
-                            @x.CITY
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col">
-                            @x.CRASH_SEVERITY_ID
-                        </div>
-                    </td>
-                </tr>
+                <td>
+                    <div class="col">
+                        @x.MAIN_ROAD_NAME
+                    </div>
+                </td>
+                <td>
+                    <div class="col">
+                        @x.CITY
+                    </div>
+                </td>
+                <td>
+                    <div class="col">
+                        @x.CRASH_SEVERITY_ID
+                    </div>
+                </td>
+                <td>
+                    <a class="btn btn-warning btn-sm" asp-controller="Home" asp-action="CrashDetails" asp-route-crashid="@x.CRASH_ID">Details</a>
+                </td>
+            </tr>
 
             }
         </tbody>

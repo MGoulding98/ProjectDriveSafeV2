@@ -92,7 +92,6 @@ namespace ProjectDriveSafeV2.Controllers
         }
 
 
-
         // Delete Crash
         [HttpGet]
         public IActionResult DeleteCrash(int crashid)
