@@ -28,20 +28,23 @@ namespace ProjectDriveSafeV2.Controllers
             return View();
         }
 
-        public IActionResult ViewCrashes(int pageNum = 1)
+        public IActionResult ViewCrashes(string county, int pageNum = 1)
         {
             int pageSize = 50;
 
             var x = new CrashesViewModel
             {
                 Crashes = repo.Crashes
+                .Where(c => c.COUNTY_NAME == county || county == null)
                 .OrderBy(c => c.CRASH_ID)
                 .Skip((pageNum - 1) * pageSize)
                 .Take(pageSize),
 
                 PageInfo = new PageInfo
                 {
-                    TotalNumCrashes = repo.Crashes.Count(),
+                    TotalNumCrashes = (county == null
+                        ? repo.Crashes.Count()
+                        : repo.Crashes.Where(x => x.COUNTY_NAME == county).Count()),
                     CrashesPerPage = pageSize,
                     CurrentPage = pageNum
                 }

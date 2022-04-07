@@ -51,6 +51,18 @@ namespace ProjectDriveSafeV2
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            // Modified password options
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Default Password settings.
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequiredLength = 10;
+                options.Password.RequiredUniqueChars = 1;
+            });
+
             services.AddControllersWithViews();
             services.AddRazorPages();
 
@@ -71,6 +83,20 @@ namespace ProjectDriveSafeV2
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            // CSP CURRENTLY BROKEN
+
+            //app.Use(async (context, next) =>
+            //{
+            //    context.Response.Headers.Add(
+            //        "Content-Security-Policy",
+            //        "script-src 'self'; " +
+            //        "style-src 'self'; " +
+            //        "img-src 'self'");
+
+            //    await next();
+            //});
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
@@ -82,10 +108,18 @@ namespace ProjectDriveSafeV2
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("countypage", "{county}/{pageNum}", new { Controller = "Home", action = "ViewCrashes" });
+
+                endpoints.MapControllerRoute("county", "{county}", new { Controller = "Home", action="ViewCrashes", pageNum = 1 });
+
+                //endpoints.MapControllerRoute(
+                //    name: "Paging",
+                //    pattern: "{pageNum}",
+                //    new { Controller = "Home", action="ViewCrashes"});
+
                 endpoints.MapRazorPages();
+
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
