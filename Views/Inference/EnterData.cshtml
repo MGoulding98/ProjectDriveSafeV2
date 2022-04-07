@@ -4,39 +4,86 @@
 
 @model ProjectData
 
+<h2>DriveSafe Assessment</h2>
+<p>How safe are you driving?</p>
+
 <form method="post" asp-controller="Inference" asp-action="Score">
-    <div><label>Pedestrian Involved:</label>
-    <input asp-for="pedestrian_involved" /></div>
+    <div>
+        <label><b>How cognizant are you of pedestrians?</b></label><br />
+        Not at all
+        @Html.RadioButtonFor(model => model.pedestrian_involved, true)
+        Somewhat
+        @Html.RadioButtonFor(model => model.pedestrian_involved, true)
+        Mostly
+        @Html.RadioButtonFor(model => model.pedestrian_involved, false)
+        Very
+        @Html.RadioButtonFor(model => model.pedestrian_involved, false)
+    </div>
+    <br />
 
-    <div><label>Bicyclist Involved:</label>
-    <input asp-for="bicyclist_involved" value="0" /></div>
+    <div>
+        <label><b>How closely do you tail a  bicyclist when they are riding on the road in front of you?</b></label><br />
+        Less than 20 feet 
+        @Html.RadioButtonFor(model => model.bicyclist_involved, true)
+        From 20 — 100 feet
+        @Html.RadioButtonFor(model => model.bicyclist_involved, true)
+        From 100—500 feet
+        @Html.RadioButtonFor(model => model.bicyclist_involved, false)
+        As far away as possible
+        @Html.RadioButtonFor(model => model.bicyclist_involved, false)
+    </div>
 
-    <div><label>Motorcycle Involved:</label>
-    <input asp-for="motorcycle_involved" value="1" /></div>
+    <div>
+        <label><b>How likely are you to wear a helmet if riding a motorcycle?</b></label><br />
+        I would never ride a motorcyle
+        @Html.RadioButtonFor(model => model.motorcycle_involved, false)
+        I wouldn't
+        @Html.RadioButtonFor(model => model.motorcycle_involved, true)
+        Somewhat
+        @Html.RadioButtonFor(model => model.motorcycle_involved, true)
+        Very
+        @Html.RadioButtonFor(model => model.motorcycle_involved, true)
+    </div>
 
-    <div><label>Unrestrained:</label>
-    <input asp-for="unrestrained" value="1" /></div>
+    <div>
+        <label>Unrestrained:</label>
+        <input asp-for="unrestrained" value="1" />
+    </div>
 
-    <div><label>DUI:</label>
-    <input asp-for="dui" value="1" /></div>
+    <div>
+        <label>DUI:</label>
+        <input asp-for="dui" value="1" />
+    </div>
 
-    <div><label>Overturn Rollover:</label>
-    <input asp-for="overturn_rollover" value="0" /></div>
+    <div>
+        <label>Overturn Rollover:</label>
+        <input asp-for="overturn_rollover" value="0" />
+    </div>
 
-    <div><label>Commercial Motor Vehicle Involved:</label>
-    <input asp-for="commercial_motor_veh_involved" value="0" /></div>
+    <div>
+        <label>Commercial Motor Vehicle Involved:</label>
+        <input asp-for="commercial_motor_veh_involved" value="0" />
+    </div>
 
-    <div><label>Older Driver Involved:</label>
-    <input asp-for="older_driver_involved" value="0" /></div>
+    <div>
+        <label>Older Driver Involved:</label>
+        <input asp-for="older_driver_involved" value="0" />
+    </div>
 
-    <div><label>Distracted Driving:</label>
-    <input asp-for="distracted_driving" value="1" /></div>
+    <div>
+        <label>Distracted Driving:</label>
+        <input asp-for="distracted_driving" value="1" />
+    </div>
 
-    <div><label>Drowsy Driving:</label>
-    <input asp-for="drowsy_driving" value="0" /></div>
+    <div>
+        <label>Drowsy Driving:</label>
+        <input asp-for="drowsy_driving" value="0" />
+    </div>
 
-    <div><label>Roadway Departure:</label>
-    <input asp-for="roadway_departure" value="1" /></div>
+    <div>
+        <label>Roadway Departure:</label>
+        <input asp-for="roadway_departure" value="1" />
+    </div>
 
 
     <button type="submit">Calculate</button>
