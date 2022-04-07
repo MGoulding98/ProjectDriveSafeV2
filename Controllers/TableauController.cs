@@ -12,5 +12,24 @@ namespace ProjectDriveSafeV2.Controllers
         {
             return View();
         }
+        public IActionResult CountySeverity()
+        {
+            return View();
+        }
+
+        public IActionResult CrashSeverity()
+        {
+            return View();
+        }
+        public IActionResult Map()
+        {
+            return View();
+        }
+
+        public IActionResult Bubble()
+        {
+            return View();
+        }
+
     }
 }

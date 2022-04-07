@@ -4,4 +4,9 @@
 
 @model ProjectDriveSafeV2.Models.Prediction
 
-<h1>Score: @Model.PredictedValue</h1>
+<div class="jumbotron">
+    <h1>Score:</h1>
+    <h2>@Math.Round(Model.PredictedValue)</h2>
+    @*<h2>@Model.PredictedValue</h2>*@
+</div>
+<h3>(On a scale from 1-5, 5 being the MOST safe driver & 1 being the LEAST safe driver.)</h3>
