@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Inference Page";
+}
+
+@model ProjectData
+
+<form method="post" asp-controller="Inference" asp-action="Score">
+    <div><label>Pedestrian Involved:</label><input asp-for="pedestrian_involved" value="0" /></div>
+    <div><label>Bicyclist Involved:</label><input asp-for="bicyclist_involved" value="0" /></div>
+    <div><label>Motorcycle Involved:</label><input asp-for="motorcycle_involved" value="1" /></div>
+    <div><label>Unrestrained:</label><input asp-for="unrestrained" value="1" /></div>
+    <div><label>DUI:</label><input asp-for="dui" value="1" /></div>
+    <div><label>Overturn Rollover:</label><input asp-for="overturn_rollover" value="0" /></div>
+    <div><label>Commercial Motor Vehicle Involved:</label><input asp-for="commercial_motor_veh_involved" value="0" /></div>
+    <div><label>Older Driver Involved:</label><input asp-for="older_driver_involved" value="0" /></div>
+    <div><label>Distracted Driving:</label><input asp-for="distracted_driving" value="1" /></div>
+    <div><label>Drowsy Driving:</label><input asp-for="drowsy_driving" value="0" /></div>
+    <div><label>Roadway Departure:</label><input asp-for="roadway_departure" value="1" /></div>
+    <div><label>Roadway Departur:</label><input asp-for="crash_severity_id" value="1" /></div>
+
+
+    <button type="submit">Calculate</button>
+</form>
