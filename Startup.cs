@@ -82,10 +82,18 @@ namespace ProjectDriveSafeV2
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("countypage", "{county}/{pageNum}", new { Controller = "Home", action = "ViewCrashes" });
+
+                endpoints.MapControllerRoute("county", "{county}", new { Controller = "Home", action="ViewCrashes", pageNum = 1 });
+
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    name: "Paging",
+                    pattern: "{pageNum}",
+                    new { Controller = "Home", action="ViewCrashes"});
+
                 endpoints.MapRazorPages();
+
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
