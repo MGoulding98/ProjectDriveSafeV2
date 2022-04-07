@@ -1,5 +1,6 @@
 ﻿using System;
-namespace ProjectDriveSafe.Models
+
+namespace ProjectDriveSafeV2.Models
 {
     public class Prediction
     {
