@@ -5,104 +5,154 @@
 @model ProjectData
 
 <h2>DriveSafe Assessment</h2>
-<p>How safe are you driving?</p>
+<p>How safe are you driving?</p><br /><br />
 
 <form method="post" asp-controller="Inference" asp-action="Score">
-    <div>
-        <label><b>How cognizant are you of pedestrians?</b></label><br />
-        Not at all
-        @Html.RadioButtonFor(model => model.pedestrian_involved, 1)
-        Somewhat
-        @Html.RadioButtonFor(model => model.pedestrian_involved, 1)
-        Mostly
-        @Html.RadioButtonFor(model => model.pedestrian_involved, 0)
-        Very
-        @Html.RadioButtonFor(model => model.pedestrian_involved, 0)
+    <div class="text-center text-justify justify-content-center col-4">
+        <div>
+            <label><b>How Old Are You?</b></label><br />
+            Below 18
+            @Html.RadioButtonFor(model => model.older_driver_involved, 0)
+            19-39
+            @Html.RadioButtonFor(model => model.older_driver_involved, 0)
+            40-64
+            @Html.RadioButtonFor(model => model.older_driver_involved, 0)
+            65+
+            @Html.RadioButtonFor(model => model.older_driver_involved, 1)
+        </div>
+        <br />
+
+        <div>
+            <label><b>How cognizant are you of pedestrians?</b></label><br />
+            Not At All
+            @Html.RadioButtonFor(model => model.pedestrian_involved, 1)
+            Somewhat
+            @Html.RadioButtonFor(model => model.pedestrian_involved, 1)
+            Mostly
+            @Html.RadioButtonFor(model => model.pedestrian_involved, 0)
+            Very
+            @Html.RadioButtonFor(model => model.pedestrian_involved, 0)
+        </div>
+        <br />
+
+        <div>
+            <label><b>How closely do you tail a  bicyclist when they are riding on the road in front of you?</b></label><br />
+            Less than 20 feet
+            @Html.RadioButtonFor(model => model.bicyclist_involved, 1)
+            From 20 — 100 feet
+            @Html.RadioButtonFor(model => model.bicyclist_involved, 1)
+            From 100—500 feet
+            @Html.RadioButtonFor(model => model.bicyclist_involved, 0)
+            As Far Away as Possible
+            @Html.RadioButtonFor(model => model.bicyclist_involved, 0)
+        </div>
+        <br />
+
+        <div>
+            <label><b>How likely are you to wear a helmet if riding a motorcycle?</b></label><br />
+            I Would Never Ride a Motorcyle
+            @Html.RadioButtonFor(model => model.motorcycle_involved, 0)
+            I Wouldn't
+            @Html.RadioButtonFor(model => model.motorcycle_involved, 1)
+            Somewhat
+            @Html.RadioButtonFor(model => model.motorcycle_involved, 1)
+            Very
+            @Html.RadioButtonFor(model => model.motorcycle_involved, 0)
+        </div>
+        <br />
+
+        <div>
+            <label><b>How often do you wear a seatbelt when driving?</b></label><br />
+            Always
+            @Html.RadioButtonFor(model => model.unrestrained, 0)
+            Most of the Time
+            @Html.RadioButtonFor(model => model.unrestrained, 0)
+            Sometimes
+            @Html.RadioButtonFor(model => model.unrestrained, 1)
+            Never
+            @Html.RadioButtonFor(model => model.unrestrained, 1)
+        </div>
+        <br />
+
+        <div>
+            <label><b>How many drinks do you think is an okay amount to drink before you get behind the wheel?</b></label><br />
+            0
+            @Html.RadioButtonFor(model => model.dui, 0)
+            1-2
+            @Html.RadioButtonFor(model => model.dui, 1)
+            3-5
+            @Html.RadioButtonFor(model => model.dui, 1)
+            6+
+            @Html.RadioButtonFor(model => model.dui, 1)
+        </div>
+        <br />
+
+        <div>
+            <label><b>How often do you yeet your vehicle off a ramp to get to the rootbeer factory?</b></label><br />
+            Never
+            @Html.RadioButtonFor(model => model.overturn_rollover, 0)
+            Happened Once
+            @Html.RadioButtonFor(model => model.overturn_rollover, 0)
+            Often
+            @Html.RadioButtonFor(model => model.overturn_rollover, 1)
+            Everyday
+            @Html.RadioButtonFor(model => model.overturn_rollover, 1)
+        </div>
+        <br />
+
+        <div>
+            <label><b>If a semi-truck is going slow in front of you, how likely are you to pass them on their right?</b></label><br />
+            Wouldn't Do It
+            @Html.RadioButtonFor(model => model.commercial_motor_veh_involved, 0)
+            Somewhat
+            @Html.RadioButtonFor(model => model.commercial_motor_veh_involved, 0)
+            Mostly
+            @Html.RadioButtonFor(model => model.commercial_motor_veh_involved, 1)
+            Very
+            @Html.RadioButtonFor(model => model.commercial_motor_veh_involved, 1)
+        </div>
+        <br />
+
+        <div>
+            <label><b>On a 20-minute drive, how many times do you check your phone?</b></label><br />
+            Never
+            @Html.RadioButtonFor(model => model.distracted_driving, 0)
+            1-3 Times
+            @Html.RadioButtonFor(model => model.distracted_driving, 0)
+            3-5 Times
+            @Html.RadioButtonFor(model => model.distracted_driving, 1)
+            5+
+            @Html.RadioButtonFor(model => model.distracted_driving, 1)
+        </div>
+        <br />
+
+        <div>
+            <label><b>On a 20-hour road trip, how likely are you to do that in one day?</b></label><br />
+            Definitely
+            @Html.RadioButtonFor(model => model.drowsy_driving, 1)
+            Probably
+            @Html.RadioButtonFor(model => model.drowsy_driving, 1)
+            Rarely
+            @Html.RadioButtonFor(model => model.drowsy_driving, 0)
+            Would Never
+            @Html.RadioButtonFor(model => model.drowsy_driving, 0)
+        </div>
+        <br />
+
+        <div>
+            <label><b>In a snow storm, how close to the speed limit do you drive?</b></label><br />
+            More Than 20 Under
+            @Html.RadioButtonFor(model => model.roadway_departure, 0)
+            Closer To 5 Under
+            @Html.RadioButtonFor(model => model.roadway_departure, 0)
+            5 Over
+            @Html.RadioButtonFor(model => model.roadway_departure, 1)
+            More Than 10 Over
+            @Html.RadioButtonFor(model => model.roadway_departure, 1)
+        </div>
+        <br />
+
+
+        <button type="submit" class="btn btn-primary">Calculate</button>
     </div>
-    <br />
-
-    <div>
-        <label><b>How closely do you tail a  bicyclist when they are riding on the road in front of you?</b></label><br />
-        Less than 20 feet
-        @Html.RadioButtonFor(model => model.bicyclist_involved, true)
-        From 20 — 100 feet
-        @Html.RadioButtonFor(model => model.bicyclist_involved, true)
-        From 100—500 feet
-        @Html.RadioButtonFor(model => model.bicyclist_involved, false)
-        As far away as possible
-        @Html.RadioButtonFor(model => model.bicyclist_involved, false)
-    </div>
-    <br />
-
-    <div>
-        <label><b>How likely are you to wear a helmet if riding a motorcycle?</b></label><br />
-        I would never ride a motorcyle
-        @Html.RadioButtonFor(model => model.motorcycle_involved, false)
-        I wouldn't
-        @Html.RadioButtonFor(model => model.motorcycle_involved, true)
-        Somewhat
-        @Html.RadioButtonFor(model => model.motorcycle_involved, true)
-        Very
-        @Html.RadioButtonFor(model => model.motorcycle_involved, false)
-    </div>
-    <br />
-
-    <div>
-        <label><b>How often do you wear a seatbelt when driving?</b></label><br />
-        Always
-        @Html.RadioButtonFor(model => model.unrestrained, false)
-        Most of the Time
-        @Html.RadioButtonFor(model => model.unrestrained, false)
-        Sometimes
-        @Html.RadioButtonFor(model => model.unrestrained, true)
-        Never
-        @Html.RadioButtonFor(model => model.unrestrained, true)
-    </div>
-    <br />
-
-    <div>
-        <label><b>How many drinks do you think is an okay amount to drink before you get behind the wheel?</b></label><br />
-        0
-        @Html.RadioButtonFor(model => model.dui, false)
-        1-2
-        @Html.RadioButtonFor(model => model.dui, true)
-        3-5
-        @Html.RadioButtonFor(model => model.dui, true)
-        6+
-        @Html.RadioButtonFor(model => model.dui, true)
-    </div>
-    <br />
-
-    <div>
-        <label>Overturn Rollover:</label>
-        <input asp-for="overturn_rollover" value="0" />
-    </div>
-
-    <div>
-        <label>Commercial Motor Vehicle Involved:</label>
-        <input asp-for="commercial_motor_veh_involved" value="0" />
-    </div>
-
-    <div>
-        <label>Older Driver Involved:</label>
-        <input asp-for="older_driver_involved" value="0" />
-    </div>
-
-    <div>
-        <label>Distracted Driving:</label>
-        <input asp-for="distracted_driving" value="1" />
-    </div>
-
-    <div>
-        <label>Drowsy Driving:</label>
-        <input asp-for="drowsy_driving" value="0" />
-    </div>
-
-    <div>
-        <label>Roadway Departure:</label>
-        <input asp-for="roadway_departure" value="1" />
-    </div>
-
-
-    <button type="submit">Calculate</button>
 </form>
