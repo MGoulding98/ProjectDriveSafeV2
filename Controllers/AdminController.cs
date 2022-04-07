@@ -106,7 +106,13 @@ namespace ProjectDriveSafeV2.Controllers
             _repo.DeleteCollision(c);
 
             return RedirectToAction("AdminView");
-        } 
+        }
+        //Get Crash Details
+        public IActionResult CrashDetailsAdmin(int crashid)
+        {
+            Crash c = _repo.GetCrash(crashid);
+            return View(c);
+        }
     }
 }
 
