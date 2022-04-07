@@ -6,11 +6,11 @@ using System.Linq;
 
 namespace ProjectDriveSafeV2.Components
 {
-    public class AdminViewComponent : ViewComponent
+    public class CountiesViewComponent : ViewComponent
     {
         private ICollisionRepository repo { get; set; }
 
-        public AdminViewComponent(ICollisionRepository temp)
+        public CountiesViewComponent(ICollisionRepository temp)
         {
             repo = temp;
         }
