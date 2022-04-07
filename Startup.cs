@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.ML.OnnxRuntime;
 
 namespace ProjectDriveSafeV2
 {
@@ -67,6 +68,10 @@ namespace ProjectDriveSafeV2
             services.AddRazorPages();
 
             services.AddScoped<ICollisionRepository, EFCollisionRepository>();
+
+            services.AddSingleton<InferenceSession>(
+                new InferenceSession("best_model2.onnx")
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
