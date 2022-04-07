@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectDriveSafeV2.Controllers
 {
-    public class TableauController
+    public class TableauController : Controller
     {
         public IActionResult DataViz()
         {
