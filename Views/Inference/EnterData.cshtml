@@ -11,19 +11,19 @@
     <div>
         <label><b>How cognizant are you of pedestrians?</b></label><br />
         Not at all
-        @Html.RadioButtonFor(model => model.pedestrian_involved, true)
+        @Html.RadioButtonFor(model => model.pedestrian_involved, 1)
         Somewhat
-        @Html.RadioButtonFor(model => model.pedestrian_involved, true)
+        @Html.RadioButtonFor(model => model.pedestrian_involved, 1)
         Mostly
-        @Html.RadioButtonFor(model => model.pedestrian_involved, false)
+        @Html.RadioButtonFor(model => model.pedestrian_involved, 0)
         Very
-        @Html.RadioButtonFor(model => model.pedestrian_involved, false)
+        @Html.RadioButtonFor(model => model.pedestrian_involved, 0)
     </div>
     <br />
 
     <div>
         <label><b>How closely do you tail a  bicyclist when they are riding on the road in front of you?</b></label><br />
-        Less than 20 feet 
+        Less than 20 feet
         @Html.RadioButtonFor(model => model.bicyclist_involved, true)
         From 20 — 100 feet
         @Html.RadioButtonFor(model => model.bicyclist_involved, true)
@@ -32,6 +32,7 @@
         As far away as possible
         @Html.RadioButtonFor(model => model.bicyclist_involved, false)
     </div>
+    <br />
 
     <div>
         <label><b>How likely are you to wear a helmet if riding a motorcycle?</b></label><br />
@@ -42,18 +43,35 @@
         Somewhat
         @Html.RadioButtonFor(model => model.motorcycle_involved, true)
         Very
-        @Html.RadioButtonFor(model => model.motorcycle_involved, true)
+        @Html.RadioButtonFor(model => model.motorcycle_involved, false)
     </div>
+    <br />
 
     <div>
-        <label>Unrestrained:</label>
-        <input asp-for="unrestrained" value="1" />
+        <label><b>How often do you wear a seatbelt when driving?</b></label><br />
+        Always
+        @Html.RadioButtonFor(model => model.unrestrained, false)
+        Most of the Time
+        @Html.RadioButtonFor(model => model.unrestrained, false)
+        Sometimes
+        @Html.RadioButtonFor(model => model.unrestrained, true)
+        Never
+        @Html.RadioButtonFor(model => model.unrestrained, true)
     </div>
+    <br />
 
     <div>
-        <label>DUI:</label>
-        <input asp-for="dui" value="1" />
+        <label><b>How many drinks do you think is an okay amount to drink before you get behind the wheel?</b></label><br />
+        0
+        @Html.RadioButtonFor(model => model.dui, false)
+        1-2
+        @Html.RadioButtonFor(model => model.dui, true)
+        3-5
+        @Html.RadioButtonFor(model => model.dui, true)
+        6+
+        @Html.RadioButtonFor(model => model.dui, true)
     </div>
+    <br />
 
     <div>
         <label>Overturn Rollover:</label>
