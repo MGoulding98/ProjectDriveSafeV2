@@ -120,7 +120,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\ViewModels\" />
-    <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\Counties\" />
     <Folder Include="Views\Inference\" />
   </ItemGroup>
