@@ -50,5 +50,13 @@ namespace ProjectDriveSafeV2.Controllers
             return View(x);
         }
 
+        //Get Crash Details
+        [HttpGet]
+        public IActionResult GetDetails(int crashid)
+        {
+            Crash c = repo.GetCrash(crashid);
+            return View("GetDetails", c);
+        }
+
     }
 }
