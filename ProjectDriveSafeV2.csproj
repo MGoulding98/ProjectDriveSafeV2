@@ -20,6 +20,7 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.23" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+    <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.11.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -114,12 +115,15 @@
     <None Remove="System.Configuration.ConfigurationManager" />
     <None Remove="Views\Shared\Components\" />
     <None Remove="Views\Shared\Components\Counties\" />
+    <None Remove="Views\Inference\" />
+    <None Remove="Microsoft.ML.OnnxRuntime" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Models\ViewModels\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\Counties\" />
+    <Folder Include="Views\Inference\" />
   </ItemGroup>
   <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
