@@ -98,10 +98,10 @@ namespace ProjectDriveSafeV2
 
                 endpoints.MapControllerRoute("county", "{county}", new { Controller = "Home", action="ViewCrashes", pageNum = 1 });
 
-                endpoints.MapControllerRoute(
-                    name: "Paging",
-                    pattern: "{pageNum}",
-                    new { Controller = "Home", action="ViewCrashes"});
+                //endpoints.MapControllerRoute(
+                //    name: "Paging",
+                //    pattern: "{pageNum}",
+                //    new { Controller = "Home", action="ViewCrashes"});
 
                 endpoints.MapRazorPages();
 
