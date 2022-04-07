@@ -10,7 +10,6 @@ namespace ProjectDriveSafeV2.Models
     {
         [Key]
         [Required]
-        [MaxLength(12, ErrorMessage = "Too long - Please enter an appropriate Crash ID")]
         public int CRASH_ID { get; set; }
         [StringLength(16, ErrorMessage = "Please enter an appropriate date time following the format - MM/DD/YYYY HH:MM")]
         public string CRASH_DATETIME { get; set; }
@@ -28,7 +27,6 @@ namespace ProjectDriveSafeV2.Models
         public string CITY { get; set; }
         [StringLength(30, ErrorMessage = "Too long - Please enter an appropriate county name")]
         public string COUNTY_NAME { get; set; }
-        [MaxLength(12, ErrorMessage = "Too long - Please enter an appropriate Crash Severity ID")]
         public int CRASH_SEVERITY_ID { get; set; }
 
         public bool WORK_ZONE_RELATED { get; set; }
