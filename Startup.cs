@@ -83,6 +83,20 @@ namespace ProjectDriveSafeV2
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            // CSP CURRENTLY BROKEN
+
+            //app.Use(async (context, next) =>
+            //{
+            //    context.Response.Headers.Add(
+            //        "Content-Security-Policy",
+            //        "script-src 'self'; " +
+            //        "style-src 'self'; " +
+            //        "img-src 'self'");
+
+            //    await next();
+            //});
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
