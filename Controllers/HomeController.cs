@@ -60,5 +60,10 @@ namespace ProjectDriveSafeV2.Controllers
             return View(c);
         }
 
+
+        public IActionResult DataViz()
+        {
+            return View();
+        }
     }
 }
