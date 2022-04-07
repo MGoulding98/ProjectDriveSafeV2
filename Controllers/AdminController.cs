@@ -92,12 +92,20 @@ namespace ProjectDriveSafeV2.Controllers
         }
 
 
+
         // Delete Crash
         [HttpGet]
         public IActionResult DeleteCrash(int crashid)
         {
             Crash c = _repo.GetCrash(crashid);
+            return RedirectToAction("DeleteCrash", c);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteCrash (Crash c)
+        {
             _repo.DeleteCollision(c);
+
             return RedirectToAction("AdminView");
         }
     }
