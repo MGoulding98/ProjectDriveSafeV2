@@ -115,7 +115,7 @@ namespace ProjectDriveSafeV2.Controllers
             _repo.DeleteCollision(c);
 
             return RedirectToAction("AdminView");
-        }
+        } 
     }
 }
 
