@@ -98,7 +98,7 @@ namespace ProjectDriveSafeV2.Controllers
         public IActionResult DeleteCrash(int crashid)
         {
             Crash c = _repo.GetCrash(crashid);
-            return RedirectToAction("DeleteCrash", c);
+            return View(c);
         }
 
         [HttpPost]
