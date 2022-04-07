@@ -10,15 +10,25 @@ namespace ProjectDriveSafeV2.Models
     {
         [Key]
         [Required]
+        [MaxLength(12, ErrorMessage = "Too long - Please enter an appropriate Crash ID")]
         public int CRASH_ID { get; set; }
+        [MaxLength(16, ErrorMessage = "Please enter an appropriate date time following the format - MM/DD/YYYY HH:MM")]
         public string CRASH_DATETIME { get; set; }
+        [MaxLength(7, ErrorMessage = "Too long - Please enter an appropriate route number")]
         public string ROUTE { get; set; }
+        [MaxLength(12, ErrorMessage = "Too long - Please enter an appropriate milepoint")]
         public string MILEPOINT { get; set; }
+        [MaxLength(14, ErrorMessage = "Too long - Please enter an appropriate latitude")]
         public string LAT_UTM_Y { get; set; }
+        [MaxLength(14, ErrorMessage = "Too long - Please enter an appropriate longitude")]
         public string LONG_UTM_X { get; set; }
+        [MaxLength(75, ErrorMessage = "Too long - Please enter an appropriate road name")]
         public string MAIN_ROAD_NAME { get; set; }
+        [MaxLength(75, ErrorMessage = "Too long - Please enter an appropriate road name")]
         public string CITY { get; set; }
+        [MaxLength(30, ErrorMessage = "Too long - Please enter an appropriate city name")]
         public string COUNTY_NAME { get; set; }
+        [MaxLength(30, ErrorMessage = "Too long - Please enter an appropriate county name")]
 
         public int CRASH_SEVERITY_ID { get; set; }
 
