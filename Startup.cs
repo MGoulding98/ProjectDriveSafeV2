@@ -107,7 +107,8 @@ namespace ProjectDriveSafeV2
                 context.Response.Headers.Add(
                     "content-security-policy",
                     "default-src 'self'; " +
-                    "script-src 'self'; " +
+                    "script-src 'self' 'unsafe-inline'; " +
+                    "script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' 'https://public.tableau.com/javascripts/api/viz_v1.js'; " +
                     "style-src 'unsafe-inline'; " +
                     "style-src-elem 'self' 'unsafe-inline'; " +
                     "img-src 'self'");
