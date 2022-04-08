@@ -6,7 +6,7 @@ namespace ProjectDriveSafeV2.Models
 {
     public class ProjectData
     {
-        [Required(ErrorMessage="Question Required")]
+        [Required]
         public float pedestrian_involved { get; set; }
         [Required]
         public float bicyclist_involved { get; set; }
@@ -20,7 +20,7 @@ namespace ProjectDriveSafeV2.Models
         public float overturn_rollover { get; set; }
         [Required]
         public float commercial_motor_veh_involved { get; set; }
-        [Required(ErrorMessage = "Question Required")]
+        [Required]
         public float older_driver_involved { get; set; }
         [Required]
         public float distracted_driving { get; set; }
