@@ -8,6 +8,7 @@ namespace ProjectDriveSafeV2.Models.ViewModels
 {
     public class CrashesViewModel
     {
+        // the main models
         public IQueryable<Crash> Crashes { get; set; }
         public PageInfo PageInfo { get; set; }
     }

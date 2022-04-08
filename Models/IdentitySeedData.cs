@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProjectDriveSafeV2.Models
 {
+    // 
     public static class IdentitySeedData
     {
         private const string adminUser = "Admin";

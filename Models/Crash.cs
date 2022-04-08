@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProjectDriveSafeV2.Models
 {
+    // model for the crash input form
     public class Crash
     {
+        //validation
         [Key]
         [Required]
         public int CRASH_ID { get; set; }
