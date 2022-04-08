@@ -20,7 +20,7 @@ namespace ProjectDriveSafeV2.Models
         public float overturn_rollover { get; set; }
         [Required]
         public float commercial_motor_veh_involved { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Question Required")]
         public float older_driver_involved { get; set; }
         [Required]
         public float distracted_driving { get; set; }
