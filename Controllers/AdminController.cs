@@ -83,7 +83,7 @@ namespace ProjectDriveSafeV2.Controllers
             ViewBag.Crashes = _repo.Crashes.ToList();
 
             Crash c = _repo.GetCrash(crashid);
-            return View("CrashFormEdit", c);
+            return View("CrashForm", c);
         }
 
         [HttpPost]
@@ -94,6 +94,8 @@ namespace ProjectDriveSafeV2.Controllers
             return RedirectToAction("AdminView");
         }
 
+
+        
 
         // Delete Crash
         [HttpGet]
