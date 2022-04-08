@@ -3,15 +3,54 @@
     Layout = "_Layout";
 }
 
+<table class="d-flex justify-content-center">
+    <tr>
+        <th>
+            <a class="nav-link text-lg-center" asp-area="" asp-controller="Tableau" asp-action="CountySeverity">County Severity</a>
+        </th>
+        <th>
+            <a class="nav-link text-lg-center" asp-area="" asp-controller="Tableau" asp-action="CrashSeverity">Crash Severity</a>
+
+        </th>
+        <th>
+            <a class="nav-link text-lg-center" asp-area="" asp-controller="Tableau" asp-action="Map">Crashes Per County (Map)</a>
+
+        </th>
+        <th>
+            <a class="nav-link text-lg-center" asp-area="" asp-controller="Tableau" asp-action="Bubble">Crashes Per County (Bubble)</a>
+
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <div class="container">
+                <a href="/Tableau/CountySeverity"><img class="justify-content-center" src="~/lib/img/Dashboard.png" width="170" /></a>
+            </div>
+        </td>
+        <td>
+            <div class="container">
+                <a href="/Tableau/Crash_Severity"><img class="justify-content-center" src="~/lib/img/Crash Severity.png" width="150" /></a>
+            </div>
+        </td>
+        <td>
+            <div class="container">
+                <a href="/Tableau/Map"><img class="justify-content-center" src="~/lib/img/CrashesPerCountyMap.png" width="150" /></a>
+            </div>
+        </td>
+        <td>
+            <div class="container">
+                <a href="/Tableau/Bubble"><img class="justify-content-center" src="~/lib/img/CrashesPerCountyBubble.png" width="150" /></a>
+            </div>
+        </td>
+    </tr>
+</table>
 
 
-                <a class="btn btn-info btn-sm" asp-area="" asp-controller="Tableau" asp-action="CountySeverity">County Severity</a>
 
-                <a class="btn btn-info btn-sm" asp-area="" asp-controller="Tableau" asp-action="CrashSeverity">Crash Severity</a>
 
-                <a class="btn btn-info btn-sm" asp-area="" asp-controller="Tableau" asp-action="Map">Crashes Per County (Map)</a>
 
-                <a class="btn btn-info btn-sm" asp-area="" asp-controller="Tableau" asp-action="Bubble">Crashes Per County (Bubble)</a>
+
+
 
 
 
