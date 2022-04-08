@@ -12,7 +12,9 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "IdentityConnection": "server=aa1tr741df1kzjo.cmlytvqfou6b.us-west-1.rds.amazonaws.com;port=3306;database=Identity;user=root;password=Ujz42UU7y*Vu",
+        "CrashesDBConnection": "server=aa1tr741df1kzjo.cmlytvqfou6b.us-west-1.rds.amazonaws.com;port=3306;database=crashes_db;user=root;password=Ujz42UU7y*Vu"
       }
     },
     "ProjectDriveSafeV2": {
@@ -20,7 +22,9 @@
       "launchBrowser": true,
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "IdentityConnection": "server=aa1tr741df1kzjo.cmlytvqfou6b.us-west-1.rds.amazonaws.com;port=3306;database=Identity;user=root;password=Ujz42UU7y*Vu",
+        "CrashesDBConnection": "server=aa1tr741df1kzjo.cmlytvqfou6b.us-west-1.rds.amazonaws.com;port=3306;database=crashes_db;user=root;password=Ujz42UU7y*Vu"
       }
     }
   }

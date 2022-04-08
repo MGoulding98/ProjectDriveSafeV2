@@ -42,13 +42,17 @@ namespace ProjectDriveSafeV2
 
             services.AddDbContext<RDSContext>(options =>
             {
-                options.UseMySql(Configuration["ConnectionStrings:CrashesDBConnection"]);
+                string connection = Environment.GetEnvironmentVariable("CrashesDBConnection");
+                options.UseMySql(connection);
             });
 
             // Identity context files
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseMySql(
-                    Configuration.GetConnectionString("IdentityConnection")));
+            {
+                string connection = Environment.GetEnvironmentVariable("IdentityConnection");
+                options.UseMySql(connection);
+            });
+
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
@@ -70,7 +74,7 @@ namespace ProjectDriveSafeV2
             services.AddScoped<ICollisionRepository, EFCollisionRepository>();
 
             services.AddSingleton<InferenceSession>(
-                new InferenceSession("best_model2.onnx")
+                new InferenceSession("wwwroot/best_model2.onnx")
             );
         }
 
@@ -95,9 +99,7 @@ namespace ProjectDriveSafeV2
             //{
             //    context.Response.Headers.Add(
             //        "Content-Security-Policy",
-            //        "script-src 'self'; " +
-            //        "style-src 'self'; " +
-            //        "img-src 'self'");
+            //        "default-src 'self'; ");
 
             //    await next();
             //});
