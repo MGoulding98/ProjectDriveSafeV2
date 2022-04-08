@@ -74,7 +74,7 @@ namespace ProjectDriveSafeV2
             services.AddScoped<ICollisionRepository, EFCollisionRepository>();
 
             services.AddSingleton<InferenceSession>(
-                new InferenceSession("wwwroot/best_model2.onnx")
+                new InferenceSession("wwwroot/best_model.onnx")
             );
         }
 
