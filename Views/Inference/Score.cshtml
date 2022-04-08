@@ -4,10 +4,20 @@
 
 @model ProjectDriveSafeV2.Models.Prediction
 
+@*This allows for the score to show up and get integers from 1 to 5*@
 <div class="d-flex justify-content-center">
     <div class="jumbotron">
         <h1>Score:</h1>
-        <p style="font-size:70px" class="text-center">@Math.Round(Model.PredictedValue)</p>
+        <p style="font-size:70px" class="text-center">
+            @if (Math.Round(Model.PredictedValue) <= 5)
+            {
+                @Math.Round(Model.PredictedValue);
+            } else
+            {
+                @Math.Floor(Model.PredictedValue);
+            }
+            
+        </p>
     </div>
 </div>
 <div class="d-flex justify-content-center">

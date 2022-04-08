@@ -93,17 +93,6 @@ namespace ProjectDriveSafeV2
                 app.UseHsts();
             }
 
-            // CSP CURRENTLY BROKEN
-
-            //app.Use(async (context, next) =>
-            //{
-            //    context.Response.Headers.Add(
-            //        "Content-Security-Policy",
-            //        "default-src 'self'; ");
-
-            //    await next();
-            //});
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
@@ -112,6 +101,20 @@ namespace ProjectDriveSafeV2
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            //app.Use(async (context, next) =>
+            //{
+            //    context.Response.Headers.Add(
+            //        "content-security-policy",
+            //        "default-src 'self'; " +
+            //        "script-src 'self' 'unsafe-inline'; " +
+            //        "script-src-elem 'self' 'unsafe-inline'; " +
+            //        "style-src 'unsafe-inline'; " +
+            //        "style-src-elem 'self' 'unsafe-inline'; " +
+            //        "img-src 'self'");
+
+            //    await next();
+            //});
 
             app.UseEndpoints(endpoints =>
             {

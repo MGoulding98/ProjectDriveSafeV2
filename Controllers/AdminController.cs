@@ -22,6 +22,7 @@ namespace ProjectDriveSafeV2.Controllers
             _repo = temp;
         }
 
+        // View for admins to use CRUD
         [Authorize]
         public IActionResult AdminView(string county, int pageNum = 1)
         {
@@ -48,6 +49,7 @@ namespace ProjectDriveSafeV2.Controllers
             return View(x);
         }
 
+        // View a new crash
         [HttpGet]
         public IActionResult CrashForm()
         {
@@ -56,6 +58,7 @@ namespace ProjectDriveSafeV2.Controllers
             return View(new Crash());
         }
 
+        // Create a new crash
         [HttpPost]
         public IActionResult CrashForm(Crash c)
         {
