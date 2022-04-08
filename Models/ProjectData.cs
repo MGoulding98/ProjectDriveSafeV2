@@ -4,6 +4,7 @@ using Microsoft.ML.OnnxRuntime.Tensors;
 
 namespace ProjectDriveSafeV2.Models
 {
+    // project data model for the quiz form
     public class ProjectData
     {
         [Required]

@@ -8,6 +8,7 @@ namespace ProjectDriveSafeV2.Models
     {
         IQueryable<Crash> Crashes { get; }
 
+        //crud capabilities
         public Crash GetCrash(int crashid);
         public void SaveCollision(Crash c);
         public void EditCollision(Crash c);

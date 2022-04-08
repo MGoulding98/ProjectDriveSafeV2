@@ -4,6 +4,7 @@ using ProjectDriveSafeV2.Models;
 
 namespace ProjectDriveSafeV2.Models
 {
+    // collision repo
     public class EFCollisionRepository : ICollisionRepository
     {
         private RDSContext context { get; set; }
@@ -15,6 +16,7 @@ namespace ProjectDriveSafeV2.Models
 
         public IQueryable<Crash> Crashes => context.crashes;
 
+        // crud capabilities 
         public Crash GetCrash(int crashid)
         {
             var crash = context.crashes.Single(x => x.CRASH_ID == crashid);

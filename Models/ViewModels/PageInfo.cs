@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace ProjectDriveSafeV2.Models.ViewModels
 {
+    // page info model
     public class PageInfo
     {
         public int TotalNumCrashes { get; set; }
