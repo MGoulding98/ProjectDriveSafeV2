@@ -8,6 +8,7 @@ namespace ProjectDriveSafeV2.Components
 {
     public class CountiesViewComponent : ViewComponent
     {
+        // The purpose of this component is to allow us to filter by different counties on our summary page
         private ICollisionRepository repo { get; set; }
 
         public CountiesViewComponent(ICollisionRepository temp)
