@@ -6,7 +6,7 @@ namespace ProjectDriveSafeV2.Models
 {
     public class ProjectData
     {
-        [Required]
+        [Required(ErrorMessage="Question Required")]
         public float pedestrian_involved { get; set; }
         [Required]
         public float bicyclist_involved { get; set; }
