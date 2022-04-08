@@ -105,8 +105,12 @@ namespace ProjectDriveSafeV2
             app.Use(async (context, next) =>
             {
                 context.Response.Headers.Add(
-                    "Content-Security-Policy",
-                    "default-src 'self'; ");
+                    "content-security-policy",
+                    "default-src 'self'; " +
+                    "script-src 'self'; " +
+                    "style-src 'unsafe-inline'; " +
+                    "style-src-elem 'self' 'unsafe-inline'; " +
+                    "img-src 'self'");
 
                 await next();
             });
