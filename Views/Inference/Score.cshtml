@@ -10,10 +10,10 @@
         <p style="font-size:70px" class="text-center">
             @if (Math.Round(Model.PredictedValue) <= 5)
             {
-                Math.Round(Model.PredictedValue);
+                @Math.Round(Model.PredictedValue);
             } else
             {
-                Math.Round(Model.PredictedValue = 5);
+                @Math.Floor(Model.PredictedValue);
             }
             
         </p>
