@@ -80,7 +80,7 @@ namespace ProjectDriveSafeV2.Controllers
             ViewBag.Crashes = _repo.Crashes.ToList();
 
             Crash c = _repo.GetCrash(crashid);
-            return View("CrashForm", c);
+            return View("CrashFormEdit", c);
         }
 
         [HttpPost]
